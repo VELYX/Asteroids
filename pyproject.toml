@@ -9,5 +9,8 @@ dependencies = [
 ]
 
 [tool.ruff.lint]
-# Skip unused variable rules (`F841`).
 ignore = ["F401", "F403", "F405"]
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
