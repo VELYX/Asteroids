@@ -7,3 +7,7 @@ requires-python = ">=3.13"
 dependencies = [
     "pygame==2.6.1",
 ]
+
+[tool.ruff.lint]
+# Skip unused variable rules (`F841`).
+ignore = ["F401", "F403", "F405"]
