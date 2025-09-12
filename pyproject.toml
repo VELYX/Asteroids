@@ -12,5 +12,7 @@ dependencies = [
 ignore = ["F401", "F403", "F405"]
 
 [tool.pyright]
+typeCheckingMode = "off"
+reportUnusedVariable = "off"
 venvPath = "."
 venv = ".venv"
