@@ -1,4 +1,3 @@
-import sys
 import pygame
 
 
@@ -28,5 +27,4 @@ class CircleShape(pygame.sprite.Sprite):
         r2 = other_circle.radius
         distance = pygame.math.Vector2.distance_to(self.position, other_circle.position)
         if (r1 + r2) > distance:
-            print("Game Over")
-            sys.exit()
+            return True
