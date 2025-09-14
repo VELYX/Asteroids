@@ -3,6 +3,7 @@ from constants import *
 from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
+from shot import Shot
 
 
 def main():
@@ -21,11 +22,13 @@ def main():
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
     asteroids = pygame.sprite.Group()
+    shots = pygame.sprite.Group()
 
     # Assign containers, disregard pyright error
     Player.containers = (updatable, drawable)
     Asteroid.containers = (asteroids, updatable, drawable)
     AsteroidField.containers = updatable
+    Shot.containers = (shots, updatable, drawable)
 
     # Instantiate Player
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
@@ -45,8 +48,14 @@ def main():
         # Set canvas
         screen.fill("black")
 
-        # Update game objects using their respective groups
+        # Update game objects
         updatable.update(dt)
+
+        # Check for collisions
+        for asteroid in asteroids:
+            asteroid.collision(player)
+
+        # Draw all drawable objects
         for obj in drawable:
             obj.draw(screen)
 
