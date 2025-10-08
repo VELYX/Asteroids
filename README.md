@@ -1,10 +1,10 @@
 # Asteroids  
 A Python implementation of 1978, Asteroids, a video game by Atari
 
-**Project Review**  
+## **Project Overview**  
 This was a very challenging project that required me to understand very well the foundational aspects of OOP in python focusing in placing methods in the correct inheritance structure to not write excessive code and keep things neat and scalable. I had so much fun writing this game!
 
-**TODO:**  
+## **TODO:**  
 - Add a scoring system
 - Implement multiple lives and respawning
 - Add an explosion effect for the asteroids
